@@ -1,0 +1,22 @@
+{
+  "name": "itprac3-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndthuc/ITPrac3-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndthuc/ITPrac3-Server/issues"
+  },
+  "homepage": "https://github.com/ndthuc/ITPrac3-Server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
