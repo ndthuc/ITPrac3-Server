@@ -1,0 +1,17 @@
+{
+    "device":{
+        "idSensor":"",
+        "name": "",
+        "createDate": "",
+        "status": 0,
+        "typeReseau": ""
+    },
+
+    "user":{
+        "idUser": "",
+        "name": "",
+        "enrollDate": "",
+        "role": "",
+        "status": ""
+    }
+}
