@@ -1,3 +1,5 @@
+const refer = require('../references/firebase');
+
 exports.getDevices = (req, res, next)=>{
     res.status(200).json({
         devices:{

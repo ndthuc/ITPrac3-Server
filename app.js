@@ -1,18 +1,11 @@
+const http = require('http');
+
 const express = require("express");
 const bodyParser = require('body-parser');
 
-const accountRoutes = require('./routes/account');
-const deviceRoutes = require('./routes/device');
+const dataRoutes = require('./controllers/data')
+
 const app = express();
-
-const Firebase = require('firebase');
-Firebase.initializeApp({
-    url: "https://tin217dv01.firebaseio.com/",
-});
-
-const db = Firebase.database();
-
-const sensorReference = db.ref("")
 
 app.use(bodyParser.json());
 
@@ -23,9 +16,35 @@ app.use((req, res, next) =>{
     next();
 });
 
-app.use('/device', deviceRoutes);
+app.use('/api', dataRoutes);
 
-app.use('/account', accountRoutes);
+app.use(function(req, res, next) {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
 
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.writeHead(201, {'Content-Type': 'application/json'});
+    response.end();
+}).listen(8000);
+
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    const html = '<!DOCTYPE html>';
+    html+= '<html>';
+    html+= '  <head>';
+    html+= '    <title></title>';
+    html+= '  </head>';
+    html+= '  <body>';
+    html+= '    <h1>'+err.message+'</h1>';
+    html+= '    <h2>'+err.status+'</h2>';
+    html+= '    <h2>More information: lintangwisesa@ymail.com</h2>';
+    html+= '    <pre>'+err.stack+'</pre>';
+    html+= '  </body>';
+    html+= '</html>';
+    res.send(html);
+}); 
 app.listen(8080);
 

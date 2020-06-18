@@ -1,16 +1,16 @@
 
-exports.getAccounts = (req, res, next)=>{
-    res.status(200).json({
-        users:{
-            idUser: "",
-            name: "",
-            pass: "",
-            enrollDate: "",
-            role: "",
-            status: ""
-        }
-    });
-};
+// exports.getAccounts = (req, res, next)=>{
+//     res.status(200).json({
+//         users:{
+//             idUser: "",
+//             name: "",
+//             pass: "",
+//             enrollDate: "",
+//             role: "",
+//             status: ""
+//         }
+//     });
+// };
 
 exports.getAccount = (req, res, next)=>{
     res.status(200).json({
